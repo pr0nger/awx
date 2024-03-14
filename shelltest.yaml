@@ -1,5 +1,5 @@
 - name: output test 
-  hosts: chkpmgr2
+  hosts: chkpmgmt
   tasks:
    - name: run uname thru awk 
      ansible.builtin.shell:  /usr/bin/uname -a | awk '{print $NF}'
