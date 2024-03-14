@@ -1,0 +1,14 @@
+---
+- name: test ssh to chkp group
+  hosts: checkpoint
+  #  vars_prompt:
+  #  - name: ansible_password
+  #    prompt: Enter password
+  #    unsafe: yes
+  #    private: yes
+  tasks:
+  - name: show version
+    command: clish -c 'show version all'
+    register: result
+
+  - debug: var=result.stdout_lines

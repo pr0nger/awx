@@ -1,0 +1,8 @@
+- name: output test 
+  hosts: myhosts
+  tasks:
+   - name: run uname thru awk 
+     ansible.builtin.shell:  /usr/bin/uname -a | awk '{print $NF}'
+     register: results
+   - debug:
+       var: results.stdout

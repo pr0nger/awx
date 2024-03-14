@@ -1,0 +1,26 @@
+---
+- hosts: checkpoint
+  connection: httpapi
+  tasks:
+    - name: Create host object
+      cp_mgmt_host:
+        color: blue
+        ipv4_address: 192.0.2.2
+        name: CP_MGMT Host 1
+        state: present
+        auto_publish_session: true
+
+    - name: Create host object
+      cp_mgmt_host:
+        color: red
+        ipv4_address: 192.0.2.3
+        state: present
+        name: CP_MGMT Host 2
+        auto_publish_session: true
+
+    - name: Create host object
+      cp_mgmt_host:
+        color: red
+        ipv4_address: 192.168.2.4
+        name: CP_MGMT Host 3
+        auto_publish_session: true

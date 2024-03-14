@@ -1,0 +1,8 @@
+- name: My first play
+  hosts: checkpoint
+  tasks:
+   - name: Ping my hosts
+     ansible.builtin.ping:
+
+   - name: Print message
+     ansible.builtin.command: /usr/bin/wall hello
